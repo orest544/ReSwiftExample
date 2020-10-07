@@ -7,27 +7,25 @@
 
 import UIKit
 
-struct User {
-    let name: String
-    let age: Int
-}
-
-extension User {
-    init(userResponse: UserResponse) {
-        name = userResponse.name ?? "Unknown"
-        age = userResponse.age ?? 0
-    }
-}
-
-class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var listTableView: UITableView!
+final class ListViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var listTableView: UITableView!
+    
+    // MARK: - UI Properties
+    
     private lazy var refreshControl: UIRefreshControl = {
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshPulled), for: .valueChanged)
         return refresh
     }()
     
+    // MARK: - Properties\
+    
     private var users: [User] = []
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +34,24 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        if users.isEmpty {
+            loadUsers()
+        }
+        if let selectedRow = listTableView.indexPathForSelectedRow {
+            listTableView.deselectRow(at: selectedRow, animated: true)
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @objc
+    private func refreshPulled() {
+        loadNewUser()
+    }
+    
+    // MARK: - Methods
+    
+    private func loadUsers() {
         listTableView.refreshControl?.beginRefreshingAutomatically()
         APIClient.getUsers { [weak self] result in
             switch result {
@@ -52,8 +67,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    @objc
-    private func refreshPulled() {
+    private func loadNewUser() {
         APIClient.getNewUser { [weak self] result in
             switch result {
             case .success(let userResponse):
@@ -66,10 +80,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print(error)
             }
         }
-    }
-    
-    // MARK: - TableView DataSource
-    
+    }    
+}
+
+// MARK: - TableView DataSource
+extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -79,9 +94,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.textLabel?.text = users[indexPath.row].name
         return cell
     }
-    
-    // MARK: - TableView Delegate
-    
+}
+
+// MARK: - TableView Delegate
+extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsVC: DetailsViewController = .make()
         detailsVC.selectedUser = users[indexPath.row]

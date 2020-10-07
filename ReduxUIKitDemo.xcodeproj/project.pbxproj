@@ -19,6 +19,9 @@
 		A28A373A252DF303008DFAFE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28A3739252DF303008DFAFE /* UIViewControllerExtensions.swift */; };
 		A2E441F0252E026A00137F00 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E441EF252E026A00137F00 /* APIClient.swift */; };
 		A2E441F6252E4BDF00137F00 /* UIRefreshControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E441F5252E4BDF00137F00 /* UIRefreshControlExtensions.swift */; };
+		A2E441FE252E562B00137F00 /* PredefinedCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E441FD252E562B00137F00 /* PredefinedCredentials.swift */; };
+		A2E44201252E564700137F00 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E44200252E564700137F00 /* User.swift */; };
+		A2E44208252E56D900137F00 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E44207252E56D900137F00 /* UsersResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		A28A3739252DF303008DFAFE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		A2E441EF252E026A00137F00 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A2E441F5252E4BDF00137F00 /* UIRefreshControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRefreshControlExtensions.swift; sourceTree = "<group>"; };
+		A2E441FD252E562B00137F00 /* PredefinedCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedCredentials.swift; sourceTree = "<group>"; };
+		A2E44200252E564700137F00 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A2E44207252E56D900137F00 /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
 		A7355996A7F0403FA5FD7097 /* Pods-ReduxUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxUIKitDemo.release.xcconfig"; path = "Target Support Files/Pods-ReduxUIKitDemo/Pods-ReduxUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C0E9B207C84B5659C188895E /* Pods_ReduxUIKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxUIKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEEF791070797492350319C6 /* Pods-ReduxUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxUIKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-ReduxUIKitDemo/Pods-ReduxUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,8 +99,8 @@
 		A27DC198252DE10A001631A0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A2E441FC252E560B00137F00 /* Model */,
 				A27DC183252DDF90001631A0 /* Main.storyboard */,
-				A27DC188252DDF90001631A0 /* LaunchScreen.storyboard */,
 				A28A3730252DE4AE008DFAFE /* LoginViewController.swift */,
 				A28A3733252DE4C0008DFAFE /* ListViewController.swift */,
 				A28A3736252DE4CB008DFAFE /* DetailsViewController.swift */,
@@ -105,6 +111,7 @@
 		A27DC19A252DE114001631A0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A27DC188252DDF90001631A0 /* LaunchScreen.storyboard */,
 				A27DC186252DDF90001631A0 /* Assets.xcassets */,
 				A27DC18B252DDF90001631A0 /* Info.plist */,
 			);
@@ -115,19 +122,19 @@
 			isa = PBXGroup;
 			children = (
 				A28A3740252DF32B008DFAFE /* Redux */,
-				A28A373E252DF31C008DFAFE /* Extensions */,
-				A2E441EF252E026A00137F00 /* APIClient.swift */,
+				A2E44203252E565C00137F00 /* Service */,
+				A28A373E252DF31C008DFAFE /* Extension */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		A28A373E252DF31C008DFAFE /* Extensions */ = {
+		A28A373E252DF31C008DFAFE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				A28A3739252DF303008DFAFE /* UIViewControllerExtensions.swift */,
 				A2E441F5252E4BDF00137F00 /* UIRefreshControlExtensions.swift */,
 			);
-			path = Extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A28A3740252DF32B008DFAFE /* Redux */ = {
@@ -135,6 +142,32 @@
 			children = (
 			);
 			path = Redux;
+			sourceTree = "<group>";
+		};
+		A2E441FC252E560B00137F00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2E441FD252E562B00137F00 /* PredefinedCredentials.swift */,
+				A2E44200252E564700137F00 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2E44203252E565C00137F00 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A2E441EF252E026A00137F00 /* APIClient.swift */,
+				A2E44204252E56BA00137F00 /* Response */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A2E44204252E56BA00137F00 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A2E44207252E56D900137F00 /* UsersResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		A57BD34ED88746236341635B /* Pods */ = {
@@ -268,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E44208252E56D900137F00 /* UsersResponse.swift in Sources */,
 				A28A3731252DE4AE008DFAFE /* LoginViewController.swift in Sources */,
 				A2E441F0252E026A00137F00 /* APIClient.swift in Sources */,
 				A27DC17E252DDF90001631A0 /* AppDelegate.swift in Sources */,
@@ -276,6 +310,8 @@
 				A27DC180252DDF90001631A0 /* SceneDelegate.swift in Sources */,
 				A28A373A252DF303008DFAFE /* UIViewControllerExtensions.swift in Sources */,
 				A28A3737252DE4CB008DFAFE /* DetailsViewController.swift in Sources */,
+				A2E44201252E564700137F00 /* User.swift in Sources */,
+				A2E441FE252E562B00137F00 /* PredefinedCredentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

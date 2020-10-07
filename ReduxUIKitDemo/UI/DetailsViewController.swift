@@ -7,10 +7,17 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
-    @IBOutlet weak var infoLabel: UILabel!
+final class DetailsViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var infoLabel: UILabel!
+    
+    // MARK: - Interface
     
     var selectedUser: User?
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

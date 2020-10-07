@@ -7,13 +7,38 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+final class LoginViewController: UIViewController {
     
-    @IBAction func loginTapped(_ sender: UIButton) {
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    
+    // MARK: - Actions
+    
+    @IBAction private func loginTapped(_ sender: UIButton) {
+        guard
+            usernameTextField.text == PredefinedCredentials.username,
+            passwordTextField.text == PredefinedCredentials.password
+        else {
+            showErrorMessage()
+            return
+        }
+        
         let listVC = ListViewController.make()
         navigationController?.pushViewController(listVC, animated: true)
+    }
+    
+    // MARK: - Methods
+    
+    private func showErrorMessage() {
+        let alertController = UIAlertController(
+            title: "Oops...", message: "Wrong credentials", preferredStyle: .alert
+        )
+        alertController.addAction(
+            UIAlertAction(title: "OK", style: .default)
+        )
+        present(alertController, animated: true)
     }
 }
 
