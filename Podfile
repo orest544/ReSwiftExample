@@ -7,4 +7,5 @@ target 'ReduxUIKitDemo' do
 
   # Pods for ReduxUIKitDemo
 	pod 'ReSwift'
+	pod 'ReSwiftThunk'
 end
