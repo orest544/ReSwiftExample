@@ -8,6 +8,10 @@
 import UIKit
 import ReSwift
 
+let store = Store(reducer: appReducer,
+                  state: nil,
+                  middleware: [])
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -21,7 +21,7 @@ final class ListViewController: UIViewController {
         return refresh
     }()
     
-    // MARK: - Properties\
+    // MARK: - Properties
     
     private var users: [User] = []
     
