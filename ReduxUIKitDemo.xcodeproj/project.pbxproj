@@ -10,6 +10,9 @@
 		657DD67C285C6C14E926C4F9 /* Pods_ReduxUIKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9B207C84B5659C188895E /* Pods_ReduxUIKitDemo.framework */; };
 		A2726D05253495F400245574 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2726D04253495F400245574 /* AppReducer.swift */; };
 		A2726D082534978A00245574 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2726D072534978A00245574 /* AppState.swift */; };
+		A2726D1225349F4A00245574 /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2726D1125349F4A00245574 /* LoginAction.swift */; };
+		A2726D1525349F9600245574 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2726D1425349F9600245574 /* LoginState.swift */; };
+		A2726D182534A12700245574 /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2726D172534A12700245574 /* LoginReducer.swift */; };
 		A27DC17E252DDF90001631A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC17D252DDF90001631A0 /* AppDelegate.swift */; };
 		A27DC180252DDF90001631A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC17F252DDF90001631A0 /* SceneDelegate.swift */; };
 		A27DC185252DDF90001631A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27DC183252DDF90001631A0 /* Main.storyboard */; };
@@ -29,6 +32,9 @@
 /* Begin PBXFileReference section */
 		A2726D04253495F400245574 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		A2726D072534978A00245574 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A2726D1125349F4A00245574 /* LoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
+		A2726D1425349F9600245574 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
+		A2726D172534A12700245574 /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
 		A27DC17A252DDF90001631A0 /* ReduxUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27DC17D252DDF90001631A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A27DC17F252DDF90001631A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				A2726D04253495F400245574 /* AppReducer.swift */,
+				A2726D172534A12700245574 /* LoginReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -74,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				A2726D072534978A00245574 /* AppState.swift */,
+				A2726D1425349F9600245574 /* LoginState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -81,6 +89,7 @@
 		A2726D0F25349A1700245574 /* Action */ = {
 			isa = PBXGroup;
 			children = (
+				A2726D1125349F4A00245574 /* LoginAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -331,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2726D182534A12700245574 /* LoginReducer.swift in Sources */,
 				A2E44208252E56D900137F00 /* UsersResponse.swift in Sources */,
 				A28A3731252DE4AE008DFAFE /* LoginViewController.swift in Sources */,
 				A2E441F0252E026A00137F00 /* APIClient.swift in Sources */,
@@ -341,9 +351,11 @@
 				A27DC180252DDF90001631A0 /* SceneDelegate.swift in Sources */,
 				A28A373A252DF303008DFAFE /* UIViewControllerExtensions.swift in Sources */,
 				A28A3737252DE4CB008DFAFE /* DetailsViewController.swift in Sources */,
+				A2726D1525349F9600245574 /* LoginState.swift in Sources */,
 				A2726D082534978A00245574 /* AppState.swift in Sources */,
 				A2E44201252E564700137F00 /* User.swift in Sources */,
 				A2E441FE252E562B00137F00 /* PredefinedCredentials.swift in Sources */,
+				A2726D1225349F4A00245574 /* LoginAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

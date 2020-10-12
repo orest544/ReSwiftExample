@@ -8,6 +8,5 @@
 import ReSwift
 
 struct AppState: StateType {
-//     ... other app states
-//    var ...
+    var loginState: LoginState
 }

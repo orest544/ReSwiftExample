@@ -9,7 +9,8 @@ import Foundation
 import ReSwift
 
 func appReducer(action: Action, state: AppState?) -> AppState {
-    // ... other reducers
-    return AppState()
+    return AppState(
+        loginState: loginReducer(action: action, state: state?.loginState)
+    )
 }
 
